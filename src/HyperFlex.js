@@ -45,23 +45,19 @@ class HyperFlex {
    *    - {Object} Attributes & styles { attribute: value,  ...,  style:{ rule: value, ... }}
    *    - {String | Number} Text for append TextNode
    *    - {NodeElement} NodeElement for append
-   * @returns {NodeElement}
+   * @returns {Node}
    */
   createHtmlElement() {
     const {
       tag,
       id,
       classList
-    } = this._parseQuerySelector()
+    } = this._parseQuerySelector(this._querySelector)
 
     this._element = document.createElement(tag)
-    if (id) {
-      this._element.id = id
-    }
+    this._setId(id)
     this._setClassList(classList)
-
     this._setParams()
-
     return this._element
   }
 
@@ -71,8 +67,8 @@ class HyperFlex {
    * @returns {Object} { tag, id, classList }
    *
    */
-  _parseQuerySelector() {
-    const matches = new RegExp('^([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)?$', 'gi').exec(this._querySelector)
+  _parseQuerySelector(querySelector) {
+    const matches = new RegExp('^([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)?$', 'gi').exec(querySelector)
     const tag = matches[1]
     assert(!!tag,
       'flexio-hyperflex:parseQuerySelector: `tag` argument assert not be empty'
@@ -87,6 +83,17 @@ class HyperFlex {
   }
 
   /**
+   *
+   * @param {string} id
+   * @private
+   */
+  _setId(id) {
+    if (id) {
+      this._element.id = id
+    }
+  }
+
+  /**
    * @private
    */
   _setParams() {
@@ -94,7 +101,7 @@ class HyperFlex {
     this._setClassList(this._hyperFlexParams.classList())
     this._setStyles(this._hyperFlexParams.style())
     this._setText(this._hyperFlexParams.text())
-    this._setChildren(this._hyperFlexParams.children())
+    this._setChildNodes(this._hyperFlexParams.childNodes())
   }
 
   /**
@@ -156,13 +163,13 @@ class HyperFlex {
 
   /**
    *
-   * @param {Node[]} children
+   * @param {Node[]} childNodes
    * @private
    */
-  _setChildren(children) {
-    const countOfChildren = children.length
+  _setChildNodes(childNodes) {
+    const countOfChildren = childNodes.length
     for (let i = 0; i < countOfChildren; i++) {
-      this._element.appendChild(children[i])
+      this._element.appendChild(childNodes[i])
     }
   }
 }

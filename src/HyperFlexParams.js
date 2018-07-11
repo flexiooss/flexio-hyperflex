@@ -4,14 +4,14 @@ export class HyperFlexParams {
    * @param {Object} attributes
    * @param {Object} style
    * @param {string} text
-   * @param {Node[]} children
+   * @param {Node[]} childNodes
    * @param {string[]} classList
    */
-  constructor(attributes = {}, style = {}, text = '', children = [], classList = []) {
+  constructor(attributes = {}, style = {}, text = '', childNodes = [], classList = []) {
     this._attributes = attributes
     this._style = style
     this._text = text
-    this._children = children
+    this._childNodes = childNodes
     this._classList = classList
   }
 
@@ -43,7 +43,7 @@ export class HyperFlexParams {
    *
    * @return {Node[]}
    */
-  get children() {
+  get childNodes() {
     return this._children
   }
 
@@ -57,15 +57,11 @@ export class HyperFlexParams {
 
   /**
    * @static
-   * @param {Node[]} children
+   * @param {Node[]} childNodes
    * @return {HyperFlexParams}
    */
-  static withChildren(children) {
-    console.log('children')
-    console.log(children)
-    const p = new this({}, {}, '', children)
-    p._children = children
-    return p
+  static withChildNodes(childNodes) {
+    return new this({}, {}, '', childNodes)
   }
 
   /**
