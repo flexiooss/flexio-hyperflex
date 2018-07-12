@@ -1,8 +1,6 @@
 import {
   assert,
   isString,
-  isNumber,
-  isNode,
   isObject
 } from 'flexio-jshelpers'
 import {HyperFlexParams} from './HyperFlexParams'
@@ -23,8 +21,23 @@ class HyperFlex {
       'flexio-hyperflex:constructor: `hyperFlexParams` property should be an instanceof `HyperFlexParams`, `%s` given',
       typeof hyperFlexParams
     )
+    /**
+     *
+     * @type {string}
+     * @private
+     */
     this._querySelector = querySelector
+    /**
+     *
+     * @type {HyperFlexParams}
+     * @private
+     */
     this._hyperFlexParams = hyperFlexParams
+    /**
+     *
+     * @type {Node}
+     * @private
+     */
     this._element = null
   }
 
@@ -35,17 +48,12 @@ class HyperFlex {
    * @return {Node}
    */
   static html(querySelector, hyperFlexParams) {
-    return new HyperFlex(querySelector, hyperFlexParams).createHtmlElement()
+    return new HyperFlex(querySelector, hyperFlexParams).createHtmlElement()._element
   }
 
   /**
-   * Shortcut for document.createElement
-   * @param {String} querySelector : tag#myId.class1.class2
-   * @param {Object | String | Number | NodeElement} Attributes & styles |text | childNodes
-   *    - {Object} Attributes & styles { attribute: value,  ...,  style:{ rule: value, ... }}
-   *    - {String | Number} Text for append TextNode
-   *    - {NodeElement} NodeElement for append
-   * @returns {Node}
+   * Create Html Element and set `_element` property
+   * @return {HyperFlex}
    */
   createHtmlElement() {
     const {
@@ -55,16 +63,24 @@ class HyperFlex {
     } = this._parseQuerySelector(this._querySelector)
 
     this._element = document.createElement(tag)
-    this._setId(id)
-    this._setClassList(classList)
-    this._setParams()
+
+    return this._setId(id)
+      ._setClassList(classList)
+      ._setParams()
+  }
+
+  /**
+   *
+   * @return {Node}
+   */
+  get element() {
     return this._element
   }
 
   /**
    *
    * @param {string} querySelector : tag#myId.class1.class2...
-   * @returns {Object} { tag, id, classList }
+   * @returns {Object} { tag: String, id: String, classList: Array<String> }
    *
    */
   _parseQuerySelector(querySelector) {
@@ -85,29 +101,32 @@ class HyperFlex {
   /**
    *
    * @param {string} id
+   * @return {HyperFlex}
    * @private
    */
   _setId(id) {
     if (id) {
       this._element.id = id
     }
+    return this
   }
 
   /**
    * @private
+   * @return {HyperFlex}
    */
   _setParams() {
-    this._setAttributes(this._hyperFlexParams.attributes())
-    this._setClassList(this._hyperFlexParams.classList())
-    this._setStyles(this._hyperFlexParams.style())
-    this._setText(this._hyperFlexParams.text())
-    this._setChildNodes(this._hyperFlexParams.childNodes())
+    return this._setAttributes(this._hyperFlexParams.attributes)
+      ._setClassList(this._hyperFlexParams.classList)
+      ._setStyles(this._hyperFlexParams.styles)
+      ._setText(this._hyperFlexParams.text)
+      ._setChildNodes(this._hyperFlexParams.childNodes)
   }
 
   /**
    * @private
    * @param {Object} styles
-   * @returns {void}
+   * @return {HyperFlex}
    */
 
   _setStyles(styles) {
@@ -119,12 +138,13 @@ class HyperFlex {
     for (let key in styles) {
       this._element.style[key] = styles[key]
     }
+    return this
   }
 
   /**
    * @private
    * @param {Object} attributes
-   * @returns {void}
+   * @return {HyperFlex}
    */
   _setAttributes(attributes) {
     assert(isObject(attributes),
@@ -137,45 +157,48 @@ class HyperFlex {
         this._element.setAttribute(key, attributes[key])
       }
     }
+    return this
   }
 
   /**
    *
-   * @param {string[]} classList
+   * @param {Array<String>} classList
    * @private
+   * @return {HyperFlex}
    */
   _setClassList(classList) {
     if (classList.length) {
       this._element.classList.add(...classList)
     }
+    return this
   }
 
   /**
    * @private
    * @param {string} text
-   * @return {void}
+   * @return {HyperFlex}
    */
   _setText(text) {
     if (text !== '') {
       this._element.appendChild(document.createTextNode(text))
     }
+    return this
   }
 
   /**
    *
-   * @param {Node[]} childNodes
+   * @param {Array<Node>} childNodes
    * @private
+   * @return {HyperFlex}
    */
   _setChildNodes(childNodes) {
     const countOfChildren = childNodes.length
     for (let i = 0; i < countOfChildren; i++) {
       this._element.appendChild(childNodes[i])
     }
+    return this
   }
 }
 
-export {
-  HyperFlex
-}
-
+export {HyperFlex}
 export const html = HyperFlex.html
