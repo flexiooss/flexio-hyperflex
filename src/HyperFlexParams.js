@@ -116,7 +116,7 @@ export class HyperFlexParams {
    * @return {HyperFlexParams}
    */
   addChildNodes(childNodes) {
-    this._childNodes = Array.concat(this._childNodes, childNodes)
+    this._childNodes = this._childNodes.concat(childNodes)
     return this
   }
 
