@@ -2,7 +2,7 @@
   "name": "flexio-hyperflex",
   "version": "1.0.0",
   "description": "Helpers to create DOM elements",
-  "module": "index.es.js",
+  "module": "index.js",
   "main": "index.js",
   "repository": "git@github.com:flexiooss/flexio-hyperflex.git",
   "author": "Thomas Chatelain (https://github.com/TomAchT)",
