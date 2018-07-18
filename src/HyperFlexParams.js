@@ -7,7 +7,12 @@ export class HyperFlexParams {
      * @type {Object<String, String>}
      * @private
      */
-    this._attributes = {}
+    this._attributes = {}/**
+     *
+     * @type {Object<String, String>}
+     * @private
+     */
+    this._properties = {}
     /**
      *
      * @type {Object<String, String>}
@@ -52,6 +57,14 @@ export class HyperFlexParams {
 
   /**
    *
+   * @return {Object<String, String>}
+   */
+  get properties() {
+    return this._properties
+  }
+
+  /**
+   *
    * @return {String}
    */
   get text() {
@@ -77,7 +90,7 @@ export class HyperFlexParams {
   /**
    * @static
    * @param {array<Node>} childNodes
-   * @return {HyperFlexParams}
+   * @return {this}
    */
   static withChildNodes(childNodes) {
     return new this().addChildNodes(childNodes)
@@ -90,6 +103,15 @@ export class HyperFlexParams {
    */
   static withAttributes(attributes) {
     return new this().addAttributes(attributes)
+  }
+
+  /**
+   * @static
+   * @param {Object<String, String>} properties
+   * @return {HyperFlexParams}
+   */
+  static withProperties(properties) {
+    return new this().addProperties(properties)
   }
 
   /**
@@ -127,6 +149,16 @@ export class HyperFlexParams {
    */
   addAttributes(attributes) {
     this._attributes = deepMerge(this._attributes, attributes)
+    return this
+  }
+
+  /**
+   *
+   * @param {Object<String, String>} properties
+   * @return {HyperFlexParams}
+   */
+  addProperties(properties) {
+    this._properties = deepMerge(this._properties, properties)
     return this
   }
 

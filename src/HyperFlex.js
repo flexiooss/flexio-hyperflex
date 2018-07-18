@@ -117,6 +117,7 @@ class HyperFlex {
    */
   _setParams() {
     return this._setAttributes(this._hyperFlexParams.attributes)
+      ._setProperties(this._hyperFlexParams.properties)
       ._setClassList(this._hyperFlexParams.classList)
       ._setStyles(this._hyperFlexParams.styles)
       ._setText(this._hyperFlexParams.text)
@@ -155,6 +156,25 @@ class HyperFlex {
     for (let key in attributes) {
       if (attributes[key] !== null) {
         this._element.setAttribute(key, attributes[key])
+      }
+    }
+    return this
+  }
+
+  /**
+   * @private
+   * @param {Object} properties
+   * @return {HyperFlex}
+   */
+  _setProperties(properties) {
+    assert(isObject(properties),
+      'flexio-hyperflex:_setProperties: `properties` argument assert be an Object `%s` given',
+      typeof properties
+    )
+
+    for (let key in properties) {
+      if (properties[key] !== null) {
+        this._element[key] = properties[key]
       }
     }
     return this
