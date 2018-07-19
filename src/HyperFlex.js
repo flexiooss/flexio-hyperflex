@@ -32,7 +32,7 @@ class HyperFlex {
      * @type {HyperFlexParams}
      * @private
      */
-    this._hyperFlexParams = hyperFlexParams
+    this._params = hyperFlexParams
     /**
      *
      * @type {Node}
@@ -116,12 +116,12 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   _setParams() {
-    return this._setAttributes(this._hyperFlexParams.attributes)
-      ._setProperties(this._hyperFlexParams.properties)
-      ._setClassList(this._hyperFlexParams.classList)
-      ._setStyles(this._hyperFlexParams.styles)
-      ._setText(this._hyperFlexParams.text)
-      ._setChildNodes(this._hyperFlexParams.childNodes)
+    return this._setAttributes(this._params.attributes)
+      ._setProperties(this._params.properties)
+      ._setClassList(this._params.classList)
+      ._setStyles(this._params.styles)
+      ._setText(this._params.text)
+      ._setChildNodes(this._params.childNodes)
   }
 
   /**

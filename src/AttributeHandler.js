@@ -1,7 +1,7 @@
 'use strict'
 import {assert, isNode} from 'flexio-jshelpers'
 
-export const KEY_ROOT = '__flexio__'
+export const KEY_ROOT = Symbol('__flexio__')
 
 class AttributeHandler {
   /**

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dc797e5-63e0-4d0d-9316-d88878b8236f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AttributeHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttributeHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HyperFlex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HyperFlex.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="HyperFlex.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HyperFlex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="863">
-              <caret line="169" column="32" lean-forward="true" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
+            <state relative-caret-position="2157">
+              <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
               </folding>
@@ -29,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="702">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -46,8 +47,17 @@
       <file leaf-file-name="HyperFlexParams.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="112" column="34" lean-forward="true" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+            <state relative-caret-position="1134">
+              <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttributeHandler.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -68,11 +78,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.es.js" />
-        <option value="$PROJECT_DIR$/src/AttributeHandler.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/HyperFlexParams.js" />
-        <option value="$PROJECT_DIR$/src/HyperFlex.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/HyperFlex.js" />
+        <option value="$PROJECT_DIR$/src/AttributeHandler.js" />
       </list>
     </option>
   </component>
@@ -91,7 +101,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="width" value="1900" />
+    <option name="width" value="1880" />
     <option name="height" value="2160" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -177,25 +187,26 @@
       <workItem from="1531419213818" duration="3143000" />
       <workItem from="1531462977677" duration="2065000" />
       <workItem from="1531923138879" duration="38000" />
-      <workItem from="1531926275578" duration="394000" />
+      <workItem from="1531926275578" duration="1237000" />
+      <workItem from="1531992813068" duration="5000" />
+      <workItem from="1531993079792" duration="6460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34783000" />
+    <option name="totallyTimeSpent" value="42091000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1900" height="2160" extended-state="4" />
+    <frame x="0" y="0" width="1880" height="2160" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="716" y="66" width="487" height="955" id="Project" order="0" visible="true" weight="0.2736842" />
+      <window_info active="true" content_ui="combo" x="716" y="66" width="487" height="955" id="Project" order="0" visible="true" weight="0.27340424" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32963854" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24986793" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.1860241" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1870781" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -205,6 +216,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32963854" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -252,13 +264,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1701">
@@ -294,13 +300,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -346,13 +346,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -398,13 +392,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -450,13 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -490,9 +472,7 @@
     <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -517,44 +497,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="110" selection-start-line="14" selection-start-column="110" selection-end-line="14" selection-end-column="110" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/index.es.js" />
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="112" column="34" lean-forward="true" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+        <state relative-caret-position="702">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HyperFlex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="169" column="32" lean-forward="true" selection-start-line="169" selection-start-column="32" selection-end-line="169" selection-end-column="32" />
+        <state relative-caret-position="2157">
+          <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.es.js">
+    <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="1134">
+          <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="440">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
