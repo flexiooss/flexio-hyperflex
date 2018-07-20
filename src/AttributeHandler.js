@@ -16,6 +16,9 @@ class AttributeHandler {
       typeof element)
     this.element = element
     this._initRootAttribute()
+    /**
+     * @type {Object}
+     */
     this.privateAttribute = this.element[KEY_ROOT]
   }
 
@@ -54,6 +57,22 @@ class AttributeHandler {
    */
   setAttribute(key, value) {
     this.privateAttribute[key] = value
+  }
+
+  /**
+   *
+   * @return {Object}
+   */
+  getAttributes() {
+    return this.privateAttribute
+  }
+
+  /**
+   *
+   * @param {Object} attributes
+   */
+  replaceAttributes(attributes) {
+    this.element[KEY_ROOT] = attributes
   }
 }
 
