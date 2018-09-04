@@ -5,6 +5,8 @@ import {
 } from 'flexio-jshelpers'
 import {HyperFlexParams} from './HyperFlexParams'
 
+const _querySelector_ = Symbol('_querySelector_')
+
 class HyperFlex {
   /**
    *
@@ -26,7 +28,7 @@ class HyperFlex {
      * @type {string}
      * @private
      */
-    this._querySelector = querySelector
+    this[_querySelector_] = querySelector
     /**
      *
      * @type {HyperFlexParams}
@@ -60,7 +62,7 @@ class HyperFlex {
       tag,
       id,
       classList
-    } = this._parseQuerySelector(this._querySelector)
+    } = this._parseQuerySelector(this.querySelector)
 
     this._element = document.createElement(tag)
 
@@ -75,6 +77,14 @@ class HyperFlex {
    */
   get element() {
     return this._element
+  }
+
+  /**
+   *
+   * @return {string}
+   */
+  get querySelector() {
+    return this[_querySelector_]
   }
 
   /**
@@ -136,8 +146,10 @@ class HyperFlex {
       typeof styles
     )
 
-    for (let key in styles) {
-      this._element.style[key] = styles[key]
+    for (const key in styles) {
+      if (styles.hasOwnProperty(key)) {
+        this._element.style[key] = styles[key]
+      }
     }
     return this
   }
@@ -153,8 +165,8 @@ class HyperFlex {
       typeof attributes
     )
 
-    for (let key in attributes) {
-      if (attributes[key] !== null) {
+    for (const key in attributes) {
+      if (attributes.hasOwnProperty(key) && attributes[key] !== null) {
         this._element.setAttribute(key, attributes[key])
       }
     }
@@ -172,8 +184,8 @@ class HyperFlex {
       typeof properties
     )
 
-    for (let key in properties) {
-      if (properties[key] !== null) {
+    for (const key in properties) {
+      if (properties.hasOwnProperty(key) && properties[key] !== null) {
         this._element[key] = properties[key]
       }
     }

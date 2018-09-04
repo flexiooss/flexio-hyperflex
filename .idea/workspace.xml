@@ -4,6 +4,7 @@
     <list default="true" id="4dc797e5-63e0-4d0d-9316-d88878b8236f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AttributeHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttributeHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HyperFlex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HyperFlex.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,14 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HyperFlex.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HyperFlex.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HyperFlex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3132">
-              <caret line="121" column="38" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#67#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="836">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -32,8 +39,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="216">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -46,17 +53,17 @@
       <file leaf-file-name="HyperFlexParams.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
+            <state relative-caret-position="-804">
               <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AttributeHandler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AttributeHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state relative-caret-position="77">
+              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -68,6 +75,7 @@
       <find>link</find>
       <find>NodeElement</find>
       <find>querySelector</find>
+      <find>_querySelector</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,8 +88,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/HyperFlexParams.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/HyperFlex.js" />
         <option value="$PROJECT_DIR$/src/AttributeHandler.js" />
+        <option value="$PROJECT_DIR$/src/HyperFlex.js" />
       </list>
     </option>
   </component>
@@ -111,6 +119,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,7 +136,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,24 +197,28 @@
       <workItem from="1531926275578" duration="1237000" />
       <workItem from="1531992813068" duration="5000" />
       <workItem from="1531993079792" duration="7104000" />
-      <workItem from="1532091315221" duration="3925000" />
+      <workItem from="1532091315221" duration="3987000" />
+      <workItem from="1532553937270" duration="1298000" />
+      <workItem from="1532614694024" duration="2033000" />
+      <workItem from="1534772978794" duration="244000" />
+      <workItem from="1534928900441" duration="619000" />
+      <workItem from="1535005955747" duration="2814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46660000" />
+    <option name="totallyTimeSpent" value="53730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="2160" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="716" y="66" width="487" height="955" id="Project" order="0" visible="true" weight="0.26614583" />
+      <window_info active="true" content_ui="combo" x="716" y="66" width="487" height="955" id="Project" order="0" visible="true" weight="0.17447917" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24986793" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18756028" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19045323" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,19 +234,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" x="716" y="66" width="487" height="955" id="Project" order="0" visible="true" weight="0.13470681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24986793" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32958984" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.37890625" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -480,13 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -503,32 +508,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="216">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HyperFlex.js">
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3132">
-          <caret line="121" column="38" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HyperFlexParams.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
+        <state relative-caret-position="-804">
           <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AttributeHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="77">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HyperFlex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,18 @@
 'use strict'
 import {assert, isNode} from 'flexio-jshelpers'
 
+/**
+ * key of private flexio properties in Node
+ * @type {symbol}
+ * @export
+ */
 export const KEY_ROOT = Symbol('__flexio__')
 
-class AttributeHandler {
+/**
+ * @class
+ * @export
+ */
+export class AttributeHandler {
   /**
    *
    * @param {Node} element
@@ -74,8 +83,4 @@ class AttributeHandler {
   replaceAttributes(attributes) {
     this.element[KEY_ROOT] = attributes
   }
-}
-
-export {
-  AttributeHandler
 }
