@@ -7,7 +7,8 @@ export class HyperFlexParams {
      * @type {Object<String, String>}
      * @private
      */
-    this._attributes = {}/**
+    this._attributes = {}
+    /**
      *
      * @type {Object<String, String>}
      * @private
@@ -185,12 +186,24 @@ export class HyperFlexParams {
   /**
    *
    * @param {Object<String, boolean>} classNames
+   * @return {HyperFlexParams}
    */
-  bindClassName(classNames){
-    for (const className in classNames){
+  bindClassName(classNames) {
+    for (const className in classNames) {
       if (classNames[className]) {
-        this._classList.push(className)
+        this.addClassName(className)
       }
     }
+    return this
+  }
+
+  /**
+   *
+   * @param {string} className
+   * @return {HyperFlexParams}
+   */
+  addClassName(...className) {
+    this._classList.push(...className)
+    return this
   }
 }
