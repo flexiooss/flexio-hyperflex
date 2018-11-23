@@ -181,4 +181,16 @@ export class HyperFlexParams {
     this._styles = deepMerge(this._styles, styles)
     return this
   }
+
+  /**
+   *
+   * @param {Object<String, boolean>} classNames
+   */
+  bindClassName(classNames){
+    for (const className in classNames){
+      if (classNames[className]) {
+        this._classList.push(className)
+      }
+    }
+  }
 }
