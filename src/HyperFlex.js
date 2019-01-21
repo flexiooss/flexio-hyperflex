@@ -46,7 +46,7 @@ class HyperFlex {
   /**
    * @static
    * @param {string} querySelector
-   * @param {HyperFlexParams} params
+   * @param {HyperFlexParams} hyperFlexParams
    * @return {Node}
    */
   static html(querySelector, hyperFlexParams) {
