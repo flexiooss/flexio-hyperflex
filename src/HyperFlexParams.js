@@ -1,40 +1,43 @@
 import {deepMerge} from 'flexio-jshelpers'
 
+/**
+ *
+ */
 export class HyperFlexParams {
   constructor() {
     /**
      *
-     * @type {Object<String, String>}
+     * @params {Object.<String, String>}
      * @private
      */
     this._attributes = {}
     /**
      *
-     * @type {Object<String, String>}
+     * @params {Object.<String, String>}
      * @private
      */
     this._properties = {}
     /**
      *
-     * @type {Object<String, String>}
+     * @params {Object.<String, String>}
      * @private
      */
     this._styles = {}
     /**
      *
-     * @type {String}
+     * @params {String}
      * @private
      */
     this._text = ''
     /**
      *
-     * @type {Array<Node>}
+     * @params {Array.<Node>}
      * @private
      */
     this._childNodes = []
     /**
      *
-     * @type {Array<String>}
+     * @params {Array.<String>}
      * @private
      */
     this._classList = []
@@ -42,7 +45,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {Object<String, String>}
+   * @return {Object.<String, String>}
    */
   get styles() {
     return this._styles
@@ -50,7 +53,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {Object<String, String>}
+   * @return {Object.<String, String>}
    */
   get attributes() {
     return this._attributes
@@ -58,7 +61,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {Object<String, String>}
+   * @return {Object.<String, String>}
    */
   get properties() {
     return this._properties
@@ -74,7 +77,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {array<Node>}
+   * @return {array.<Node>}
    */
   get childNodes() {
     return this._childNodes
@@ -82,7 +85,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {array<String>}
+   * @return {array.<String>}
    */
   get classList() {
     return this._classList
@@ -90,19 +93,17 @@ export class HyperFlexParams {
 
   /**
    * @static
-   * @param {array<Node>} childNodes
+   * @param {array.<Node>} childNodes
    * @constructor
-   * @return {this}
+   * @return {HyperFlexParams}
    */
   static withChildNodes(childNodes) {
     return new this().addChildNodes(childNodes)
   }
 
   /**
-   * @static
-   * @param {Object<String, String>} attributes
-   * @constructor
-   * @return {this}
+   * @param {Object.<String, String>} attributes
+   * @returns {HyperFlexParams}
    */
   static withAttributes(attributes) {
     return new this().addAttributes(attributes)
@@ -110,9 +111,9 @@ export class HyperFlexParams {
 
   /**
    * @static
-   * @param {Object<String, String>} properties
+   * @param {Object.<String, String>} properties
    * @constructor
-   * @return {this}
+   * @return {HyperFlexParams}
    */
   static withProperties(properties) {
     return new this().addProperties(properties)
@@ -120,8 +121,8 @@ export class HyperFlexParams {
 
   /**
    * @static
-   * @param {Object<String, String>} styles
-   * @return {this}
+   * @param {Object.<String, String>} styles
+   * @return {HyperFlexParams}
    */
   static withStyles(styles) {
     return new this().addStyles(styles)
@@ -131,7 +132,7 @@ export class HyperFlexParams {
    * @static
    * @param {string} text
    * @constructor
-   * @return {this}
+   * @return {HyperFlexParams}
    */
   static withText(text) {
     return new this().addText(text)
@@ -139,7 +140,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {array<Node>} childNodes
+   * @param {array.<Node>} childNodes
    * @return {this}
    */
   addChildNodes(childNodes) {
@@ -149,7 +150,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {Object<String, String>} attributes
+   * @param {Object.<String, String>} attributes
    * @return {this}
    */
   addAttributes(attributes) {
@@ -159,7 +160,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {Object<String, String>} properties
+   * @param {Object.<String, String>} properties
    * @return {this}
    */
   addProperties(properties) {
@@ -179,8 +180,8 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {Object<String, String>} styles
-   * @return {this}
+   * @param {Object.<String, String>} styles
+   * @returns {this}
    */
   addStyles(styles) {
     this._styles = deepMerge(this._styles, styles)
@@ -189,21 +190,20 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {Object<String, boolean>} classNames
+   * @param {String} className
+   * @param { boolean} statement
    * @return {this}
    */
-  bindClassName(classNames) {
-    for (const className in classNames) {
-      if (classNames.hasOwnProperty(className) && classNames[className]) {
-        this.addClassName(className)
-      }
+  bindClassName(className, statement) {
+    if (statement === true) {
+      this.addClassName(className)
     }
     return this
   }
 
   /**
    *
-   * @param {string} className
+   * @param {...string} className
    * @return {this}
    */
   addClassName(...className) {

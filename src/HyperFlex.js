@@ -25,20 +25,20 @@ class HyperFlex {
     )
     /**
      *
-     * @type {string}
+     * @params {string}
      * @private
      */
     this[_querySelector_] = querySelector
     /**
      *
-     * @type {HyperFlexParams}
-     * @private
+     * @params {HyperFlexParams}
+     * @protected
      */
     this._params = hyperFlexParams
     /**
      *
-     * @type {Node}
-     * @private
+     * @params {Element}
+     * @protected
      */
     this._element = null
   }
@@ -47,7 +47,7 @@ class HyperFlex {
    * @static
    * @param {string} querySelector
    * @param {HyperFlexParams} hyperFlexParams
-   * @return {Node}
+   * @return {Element}
    */
   static html(querySelector, hyperFlexParams) {
     return new HyperFlex(querySelector, hyperFlexParams).createHtmlElement()._element
@@ -73,7 +73,7 @@ class HyperFlex {
 
   /**
    *
-   * @return {Node}
+   * @return {Element}
    */
   get element() {
     return this._element
@@ -110,9 +110,9 @@ class HyperFlex {
 
   /**
    *
+   * @protected
    * @param {string} id
    * @return {HyperFlex}
-   * @private
    */
   _setId(id) {
     if (id) {
@@ -122,7 +122,7 @@ class HyperFlex {
   }
 
   /**
-   * @private
+   * @protected
    * @return {HyperFlex}
    */
   _setParams() {
@@ -135,7 +135,7 @@ class HyperFlex {
   }
 
   /**
-   * @private
+   * @protected
    * @param {Object} styles
    * @return {HyperFlex}
    */
@@ -155,7 +155,7 @@ class HyperFlex {
   }
 
   /**
-   * @private
+   * @protected
    * @param {Object} attributes
    * @return {HyperFlex}
    */
@@ -174,7 +174,7 @@ class HyperFlex {
   }
 
   /**
-   * @private
+   * @protected
    * @param {Object} properties
    * @return {HyperFlex}
    */
@@ -194,8 +194,8 @@ class HyperFlex {
 
   /**
    *
+   * @protected
    * @param {Array<String>} classList
-   * @private
    * @return {HyperFlex}
    */
   _setClassList(classList) {
@@ -206,7 +206,7 @@ class HyperFlex {
   }
 
   /**
-   * @private
+   * @protected
    * @param {string} text
    * @return {HyperFlex}
    */
@@ -219,8 +219,8 @@ class HyperFlex {
 
   /**
    *
+   * @protected
    * @param {Array<Node>} childNodes
-   * @private
    * @return {HyperFlex}
    */
   _setChildNodes(childNodes) {

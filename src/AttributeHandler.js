@@ -3,7 +3,7 @@ import {assert, isNode} from 'flexio-jshelpers'
 
 /**
  * key of private flexio properties in Node
- * @type {symbol}
+ * @params {symbol}
  * @export
  */
 export const KEY_ROOT = Symbol('__flexio__')
@@ -21,12 +21,12 @@ export class AttributeHandler {
   constructor(element) {
     assert(
       isNode(element),
-      'flexio-hyperflex:AttributeHandler:constructor: `element` argument assert be a NodeElement, `%s` given',
+      'flexio-hyperflex:AttributeHandler:constructor: `element` argument assert be a ElementDescription, `%s` given',
       typeof element)
     this.element = element
     this._initRootAttribute()
     /**
-     * @type {Object}
+     * @params {Object}
      */
     this.privateAttribute = this.element[KEY_ROOT]
   }
