@@ -1,6 +1,10 @@
+dist/
+libs/
 node_modules/
-yarn.lock
-yarn-error.log
-.eslintrc
+*.log
+*.lock
+.vscode/
 .idea/
-.idea/workspace.xml
+*.iml
+generated/
+package-lock.json
