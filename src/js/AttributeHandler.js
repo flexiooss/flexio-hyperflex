@@ -1,12 +1,11 @@
-'use strict'
-import {assert, isNode} from 'flexio-jshelpers'
+import {assertType, isNode} from '@flexio-oss/assert'
 
 /**
  * key of private flexio properties in Node
  * @params {symbol}
  * @export
  */
-export const KEY_ROOT = Symbol('__flexio__')
+export const KEY_ROOT = Symbol.for('__flexio__')
 
 /**
  * @class
@@ -19,9 +18,9 @@ export class AttributeHandler {
    * @return {AttributeHandler}
    */
   constructor(element) {
-    assert(
+    assertType(
       isNode(element),
-      'flexio-hyperflex:AttributeHandler:constructor: `element` argument assert be a ElementDescription, `%s` given',
+      'flexio-hyperflex:AttributeHandler:constructor: `element` argument assertType be a ElementDescription, `%s` given',
       typeof element)
     this.element = element
     this._initRootAttribute()
