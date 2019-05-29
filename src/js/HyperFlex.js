@@ -1,11 +1,11 @@
 import {
-  assert,
+  assertType,
   isString,
   isObject
-} from 'flexio-jshelpers'
+} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
-const _querySelector_ = Symbol('_querySelector_')
+const _querySelector_ = Symbol.for('_querySelector_')
 
 class HyperFlex {
   /**
@@ -15,11 +15,11 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   constructor(querySelector, hyperFlexParams) {
-    assert(isString(querySelector),
-      'flexio-hyperflex:constructor: `querySelector` argument assert be a String `%s` given',
+    assertType(isString(querySelector),
+      'flexio-hyperflex:constructor: `querySelector` argument assertType be a String `%s` given',
       typeof querySelector
     )
-    assert(hyperFlexParams instanceof HyperFlexParams,
+    assertType(hyperFlexParams instanceof HyperFlexParams,
       'flexio-hyperflex:constructor: `hyperFlexParams` property should be an instanceof `HyperFlexParams`, `%s` given',
       typeof hyperFlexParams
     )
@@ -96,8 +96,8 @@ class HyperFlex {
   _parseQuerySelector(querySelector) {
     const matches = new RegExp('^([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)?$', 'gi').exec(querySelector)
     const tag = matches[1]
-    assert(!!tag,
-      'flexio-hyperflex:parseQuerySelector: `tag` argument assert not be empty'
+    assertType(!!tag,
+      'flexio-hyperflex:parseQuerySelector: `tag` argument assertType not be empty'
     )
     const id = (matches[2]) ? matches[2].substr(1) : ''
     const classList = (matches[3]) ? matches[3].substr(1).split('.') : []
@@ -141,8 +141,8 @@ class HyperFlex {
    */
 
   _setStyles(styles) {
-    assert(isObject(styles),
-      'flexio-hyperflex:setStyles: `styles` argument assert be an Object `%s` given',
+    assertType(isObject(styles),
+      'flexio-hyperflex:setStyles: `styles` argument assertType be an Object `%s` given',
       typeof styles
     )
 
@@ -160,8 +160,8 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   _setAttributes(attributes) {
-    assert(isObject(attributes),
-      'flexio-hyperflex:setAttributes: `attributes` argument assert be an Object `%s` given',
+    assertType(isObject(attributes),
+      'flexio-hyperflex:setAttributes: `attributes` argument assertType be an Object `%s` given',
       typeof attributes
     )
 
@@ -179,8 +179,8 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   _setProperties(properties) {
-    assert(isObject(properties),
-      'flexio-hyperflex:_setProperties: `properties` argument assert be an Object `%s` given',
+    assertType(isObject(properties),
+      'flexio-hyperflex:_setProperties: `properties` argument assertType be an Object `%s` given',
       typeof properties
     )
 

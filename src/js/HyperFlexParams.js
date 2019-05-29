@@ -1,4 +1,4 @@
-import {deepMerge} from 'flexio-jshelpers'
+import {deepMerge} from '@flexio-oss/js-type-helpers'
 
 /**
  *
