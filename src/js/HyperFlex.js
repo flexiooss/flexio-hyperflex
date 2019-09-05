@@ -1,8 +1,4 @@
-import {
-  assertType,
-  isString,
-  isObject
-} from '@flexio-oss/assert'
+import {assertType, isString, isObject, assert} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
 const _querySelector_ = Symbol.for('_querySelector_')
@@ -95,6 +91,10 @@ class HyperFlex {
    */
   _parseQuerySelector(querySelector) {
     const matches = new RegExp('^([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)?$', 'gi').exec(querySelector)
+    assert(
+      matches !== null,
+      'query selector \'' + querySelector + '\' does not match the right format : ([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)? expected'
+    )
     const tag = matches[1]
     assertType(!!tag,
       'flexio-hyperflex:parseQuerySelector: `tag` argument assertType not be empty'
