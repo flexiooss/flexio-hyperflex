@@ -207,7 +207,15 @@ export class HyperFlexParams {
    * @return {this}
    */
   addClassName(...className) {
-    this._classList.push(...className)
+
+    this._classList.push(...className.map(
+      /**
+       *
+       * @param {string} v
+       */
+      (v) => {
+        return v.replace('.', '')
+      }))
     return this
   }
 }
