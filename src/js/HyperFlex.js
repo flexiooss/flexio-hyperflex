@@ -53,10 +53,11 @@ class HyperFlex {
    * @static
    * @param {string} querySelector
    * @param {HyperFlexParams} hyperFlexParams
+   * @param {Document} document
    * @return {Element}
    */
-  static html(querySelector, hyperFlexParams) {
-    return new HyperFlex(querySelector, hyperFlexParams).createHtmlElement()._element
+  static html(querySelector, hyperFlexParams, document) {
+    return new HyperFlex(querySelector, hyperFlexParams, document).createHtmlElement()._element
   }
 
   /**
