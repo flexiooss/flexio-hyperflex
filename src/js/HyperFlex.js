@@ -2,15 +2,17 @@ import {assertType, isString, isObject, assert} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
 const _querySelector_ = Symbol.for('_querySelector_')
+const _document = Symbol.for('_document')
 
 class HyperFlex {
   /**
    *
    * @param {string} querySelector
    * @param {HyperFlexParams} hyperFlexParams
+   * @param {Document} document
    * @return {HyperFlex}
    */
-  constructor(querySelector, hyperFlexParams) {
+  constructor(querySelector, hyperFlexParams, document) {
     assertType(isString(querySelector),
       'flexio-hyperflex:constructor: `querySelector` argument assertType be a String `%s` given',
       typeof querySelector
@@ -27,6 +29,13 @@ class HyperFlex {
     this[_querySelector_] = querySelector
     /**
      *
+     * @type {Document}
+     * @private
+     */
+    this[_document] = document
+
+    /**
+     *
      * @params {HyperFlexParams}
      * @protected
      */
@@ -37,6 +46,7 @@ class HyperFlex {
      * @protected
      */
     this._element = null
+
   }
 
   /**
@@ -60,7 +70,7 @@ class HyperFlex {
       classList
     } = this._parseQuerySelector(this.querySelector)
 
-    this._element = document.createElement(tag)
+    this._element = this[_document].createElement(tag)
 
     return this._setId(id)
       ._setClassList(classList)
@@ -212,7 +222,7 @@ class HyperFlex {
    */
   _setText(text) {
     if (text !== '') {
-      this._element.appendChild(document.createTextNode(text))
+      this._element.appendChild(this[_document].createTextNode(text))
     }
     return this
   }
