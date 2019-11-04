@@ -1,4 +1,5 @@
 import {deepMerge} from '@flexio-oss/js-type-helpers'
+import {isNull} from '../../../../../../assert'
 
 /**
  *
@@ -190,13 +191,16 @@ export class HyperFlexParams {
 
   /**
    *
-   * @param {String} className
-   * @param { boolean} statement
+   * @param {boolean} statement
+   * @param {String} classNameTrue
+   * @param {String} [classNameFalse=null]
    * @return {this}
    */
-  bindClassName(className, statement) {
+  bindClassName(statement, classNameTrue, classNameFalse = null) {
     if (statement === true) {
-      this.addClassName(className)
+      this.addClassName(classNameTrue)
+    } else if (!isNull(classNameFalse)) {
+      this.addClassName(classNameFalse)
     }
     return this
   }
