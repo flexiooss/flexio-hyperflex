@@ -1,5 +1,5 @@
 import {deepMerge} from '@flexio-oss/js-type-helpers'
-import {isNull} from '../../../../../../assert'
+import {isNull} from '@flexio-oss/assert'
 
 /**
  *
