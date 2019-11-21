@@ -1,5 +1,6 @@
 import {deepMerge} from '@flexio-oss/js-type-helpers'
 import {isNull} from '@flexio-oss/assert'
+import {globalFlexioImport} from '@flexio-oss/global-import-registry'
 
 /**
  *
@@ -38,10 +39,10 @@ export class HyperFlexParams {
     this._childNodes = []
     /**
      *
-     * @params {Array.<String>}
+     * @params {StringArray}
      * @private
      */
-    this._classList = []
+    this._classList = new globalFlexioImport.io.flexio.flex_types.arrays.StringArray()
   }
 
   /**
@@ -86,7 +87,7 @@ export class HyperFlexParams {
 
   /**
    *
-   * @return {array.<String>}
+   * @return {StringArray}
    */
   get classList() {
     return this._classList
@@ -191,6 +192,40 @@ export class HyperFlexParams {
 
   /**
    *
+   * @param {String} key
+   * @param {boolean} statement
+   * @param {String} attribute
+   * @param {String} [attributeFalse=null]
+   * @return {this}
+   */
+  bindAttribute(key, statement, attribute, attributeFalse = null) {
+    if (statement === true) {
+      this._attributes[key] = attribute
+    } else if (!isNull(attributeFalse)) {
+      this._attributes[key] = attributeFalse
+    }
+    return this
+  }
+
+  /**
+   *
+   * @param {String} key
+   * @param {boolean} statement
+   * @param {String} property
+   * @param {String} [propertyFalse=null]
+   * @return {this}
+   */
+  bindProperty(key, statement, property, propertyFalse = null) {
+    if (statement === true) {
+      this._properties[key] = property
+    } else if (!isNull(propertyFalse)) {
+      this._properties[key] = propertyFalse
+    }
+    return this
+  }
+
+  /**
+   *
    * @param {boolean} statement
    * @param {String} classNameTrue
    * @param {String} [classNameFalse=null]
@@ -211,15 +246,7 @@ export class HyperFlexParams {
    * @return {this}
    */
   addClassName(...className) {
-
-    this._classList.push(...className.map(
-      /**
-       *
-       * @param {string} v
-       */
-      (v) => {
-        return v.replace('.', '')
-      }))
+    this._classList.push(...className)
     return this
   }
 }
