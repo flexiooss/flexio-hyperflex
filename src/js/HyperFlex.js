@@ -1,4 +1,4 @@
-import {assertType, isString, isObject, assert} from '@flexio-oss/assert'
+import {assert, assertType, isObject, isString} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
 const _querySelector_ = Symbol.for('_querySelector_')
@@ -69,7 +69,7 @@ class HyperFlex {
       tag,
       id,
       classList
-    } = this._parseQuerySelector(this.querySelector)
+    } = this._parseQuerySelector(this.querySelector())
 
     this._element = this[_document].createElement(tag)
 
