@@ -211,7 +211,7 @@ class HyperFlex {
    */
   _setClassList(classList) {
     if (classList.length) {
-      this._element.classList().add(...classList)
+      this._element.classList.add(...classList)
     }
     return this
   }
