@@ -49,7 +49,7 @@ export class HyperFlexParams {
    *
    * @return {Object.<String, String>}
    */
-  get styles() {
+  styles() {
     return this._styles
   }
 
@@ -57,7 +57,7 @@ export class HyperFlexParams {
    *
    * @return {Object.<String, String>}
    */
-  get attributes() {
+  attributes() {
     return this._attributes
   }
 
@@ -65,7 +65,7 @@ export class HyperFlexParams {
    *
    * @return {Object.<String, String>}
    */
-  get properties() {
+  properties() {
     return this._properties
   }
 
@@ -73,7 +73,7 @@ export class HyperFlexParams {
    *
    * @return {String}
    */
-  get text() {
+  text() {
     return this._text
   }
 
@@ -81,7 +81,7 @@ export class HyperFlexParams {
    *
    * @return {array.<Node>}
    */
-  get childNodes() {
+  childNodes() {
     return this._childNodes
   }
 
@@ -89,7 +89,7 @@ export class HyperFlexParams {
    *
    * @return {StringArray}
    */
-  get classList() {
+  classList() {
     return this._classList
   }
 

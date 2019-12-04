@@ -82,7 +82,7 @@ class HyperFlex {
    *
    * @return {Element}
    */
-  get element() {
+  element() {
     return this._element
   }
 
@@ -90,7 +90,7 @@ class HyperFlex {
    *
    * @return {string}
    */
-  get querySelector() {
+  querySelector() {
     return this[_querySelector_]
   }
 
@@ -137,12 +137,12 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   _setParams() {
-    return this._setAttributes(this._params.attributes)
-      ._setProperties(this._params.properties)
-      ._setClassList(this._params.classList)
-      ._setStyles(this._params.styles)
-      ._setText(this._params.text)
-      ._setChildNodes(this._params.childNodes)
+    return this._setAttributes(this._params.attributes())
+      ._setProperties(this._params.properties())
+      ._setClassList(this._params.classList())
+      ._setStyles(this._params.styles())
+      ._setText(this._params.text())
+      ._setChildNodes(this._params.childNodes())
   }
 
   /**
@@ -211,7 +211,7 @@ class HyperFlex {
    */
   _setClassList(classList) {
     if (classList.length) {
-      this._element.classList.add(...classList)
+      this._element.classList().add(...classList)
     }
     return this
   }
