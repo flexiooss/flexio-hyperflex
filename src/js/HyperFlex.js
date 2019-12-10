@@ -1,20 +1,18 @@
-import {
-  assertType,
-  isString,
-  isObject
-} from '@flexio-oss/assert'
+import {assert, assertType, isObject, isString} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
 const _querySelector_ = Symbol.for('_querySelector_')
+const _document = Symbol.for('_document')
 
 class HyperFlex {
   /**
    *
    * @param {string} querySelector
    * @param {HyperFlexParams} hyperFlexParams
+   * @param {Document} document
    * @return {HyperFlex}
    */
-  constructor(querySelector, hyperFlexParams) {
+  constructor(querySelector, hyperFlexParams, document) {
     assertType(isString(querySelector),
       'flexio-hyperflex:constructor: `querySelector` argument assertType be a String `%s` given',
       typeof querySelector
@@ -31,6 +29,13 @@ class HyperFlex {
     this[_querySelector_] = querySelector
     /**
      *
+     * @type {Document}
+     * @private
+     */
+    this[_document] = document
+
+    /**
+     *
      * @params {HyperFlexParams}
      * @protected
      */
@@ -41,16 +46,18 @@ class HyperFlex {
      * @protected
      */
     this._element = null
+
   }
 
   /**
    * @static
    * @param {string} querySelector
    * @param {HyperFlexParams} hyperFlexParams
+   * @param {Document} document
    * @return {Element}
    */
-  static html(querySelector, hyperFlexParams) {
-    return new HyperFlex(querySelector, hyperFlexParams).createHtmlElement()._element
+  static html(querySelector, hyperFlexParams, document) {
+    return new HyperFlex(querySelector, hyperFlexParams, document).createHtmlElement()._element
   }
 
   /**
@@ -62,9 +69,9 @@ class HyperFlex {
       tag,
       id,
       classList
-    } = this._parseQuerySelector(this.querySelector)
+    } = this._parseQuerySelector(this.querySelector())
 
-    this._element = document.createElement(tag)
+    this._element = this[_document].createElement(tag)
 
     return this._setId(id)
       ._setClassList(classList)
@@ -95,6 +102,10 @@ class HyperFlex {
    */
   _parseQuerySelector(querySelector) {
     const matches = new RegExp('^([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)?$', 'gi').exec(querySelector)
+    assert(
+      matches !== null,
+      'query selector \'' + querySelector + '\' does not match the right format : ([\\w-]*)([#\\w\\d-_]*)?([.\\w\\d-_]*)? expected'
+    )
     const tag = matches[1]
     assertType(!!tag,
       'flexio-hyperflex:parseQuerySelector: `tag` argument assertType not be empty'
@@ -200,7 +211,7 @@ class HyperFlex {
    */
   _setClassList(classList) {
     if (classList.length) {
-      this._element.classList().add(...classList)
+      this._element.classList.add(...classList)
     }
     return this
   }
@@ -212,7 +223,7 @@ class HyperFlex {
    */
   _setText(text) {
     if (text !== '') {
-      this._element.appendChild(document.createTextNode(text))
+      this._element.appendChild(this[_document].createTextNode(text))
     }
     return this
   }
