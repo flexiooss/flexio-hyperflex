@@ -1,4 +1,4 @@
-import {assertType, isString, isObject, assert} from '@flexio-oss/assert'
+import {assert, assertType, isObject, isString} from '@flexio-oss/assert'
 import {HyperFlexParams} from './HyperFlexParams'
 
 const _querySelector_ = Symbol.for('_querySelector_')
@@ -69,7 +69,7 @@ class HyperFlex {
       tag,
       id,
       classList
-    } = this._parseQuerySelector(this.querySelector)
+    } = this._parseQuerySelector(this.querySelector())
 
     this._element = this[_document].createElement(tag)
 
@@ -82,7 +82,7 @@ class HyperFlex {
    *
    * @return {Element}
    */
-  get element() {
+  element() {
     return this._element
   }
 
@@ -90,7 +90,7 @@ class HyperFlex {
    *
    * @return {string}
    */
-  get querySelector() {
+  querySelector() {
     return this[_querySelector_]
   }
 
@@ -137,12 +137,12 @@ class HyperFlex {
    * @return {HyperFlex}
    */
   _setParams() {
-    return this._setAttributes(this._params.attributes)
-      ._setProperties(this._params.properties)
-      ._setClassList(this._params.classList)
-      ._setStyles(this._params.styles)
-      ._setText(this._params.text)
-      ._setChildNodes(this._params.childNodes)
+    return this._setAttributes(this._params.attributes())
+      ._setProperties(this._params.properties())
+      ._setClassList(this._params.classList())
+      ._setStyles(this._params.styles())
+      ._setText(this._params.text())
+      ._setChildNodes(this._params.childNodes())
   }
 
   /**
