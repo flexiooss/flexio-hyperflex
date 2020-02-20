@@ -2,6 +2,7 @@ import {deepMerge} from '@flexio-oss/js-type-helpers'
 import {isNull, isFunction} from '@flexio-oss/assert'
 import {globalFlexioImport} from '@flexio-oss/global-import-registry'
 
+
 /**
  *
  */
@@ -152,6 +153,26 @@ export class HyperFlexParams {
 
   /**
    *
+   * @param {(boolean|function():boolean)} statement
+   * @param {(Element[]|function():Element[])} value
+   * @param {?(Element[]|function():Element[])} [valueFalse=null]
+   * @return {this}
+   */
+  bindChildNodes(statement, value, valueFalse = null) {
+
+    if ((isFunction(statement) ? statement() : statement) === true) {
+      this._childNodes = (isFunction(value) ? value() : value)
+    } else {
+      valueFalse = isFunction(valueFalse) ? valueFalse() : valueFalse
+      if (!isNull(valueFalse)) {
+        this._childNodes = valueFalse
+      }
+    }
+    return this
+  }
+
+  /**
+   *
    * @param {Object.<String, String>} attributes
    * @return {this}
    */
@@ -199,12 +220,14 @@ export class HyperFlexParams {
    * @return {this}
    */
   bindAttribute(key, statement, attribute, attributeFalse = null) {
-    attributeFalse = isFunction(attributeFalse) ? attributeFalse() : attributeFalse
 
     if ((isFunction(statement) ? statement() : statement) === true) {
       this._attributes[key] = (isFunction(attribute) ? attribute() : attribute)
-    } else if (!isNull(attributeFalse)) {
-      this._attributes[key] = attributeFalse
+    } else {
+      attributeFalse = isFunction(attributeFalse) ? attributeFalse() : attributeFalse
+      if (!isNull(attributeFalse)) {
+        this._attributes[key] = attributeFalse
+      }
     }
     return this
   }
@@ -238,12 +261,14 @@ export class HyperFlexParams {
    */
   bindProperty(key, statement, property, propertyFalse = null) {
 
-    propertyFalse = isFunction(propertyFalse) ? propertyFalse() : propertyFalse
-
     if ((isFunction(statement) ? statement() : statement) === true) {
       this._properties[key] = (isFunction(property) ? property() : property)
-    } else if (!isNull(propertyFalse)) {
-      this._properties[key] = propertyFalse
+    } else {
+      propertyFalse = isFunction(propertyFalse) ? propertyFalse() : propertyFalse
+      if (!isNull(propertyFalse)) {
+
+        this._properties[key] = propertyFalse
+      }
     }
     return this
   }
@@ -256,12 +281,15 @@ export class HyperFlexParams {
    * @return {this}
    */
   bindClassName(statement, classNameTrue, classNameFalse = null) {
-    classNameFalse = isFunction(classNameFalse) ? classNameFalse() : classNameFalse
 
     if ((isFunction(statement) ? statement() : statement) === true) {
       this.addClassName((isFunction(classNameTrue) ? classNameTrue() : classNameTrue))
-    } else if (!isNull(classNameFalse)) {
-      this.addClassName(classNameFalse)
+    } else {
+      classNameFalse = isFunction(classNameFalse) ? classNameFalse() : classNameFalse
+      if (!isNull(classNameFalse)) {
+
+        this.addClassName(classNameFalse)
+      }
     }
     return this
   }
