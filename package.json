@@ -1,6 +1,6 @@
 {
   "name": "@flexio-oss/flexio-hyperflex",
-  "version": "0.2.0-dev",
+  "version": "0.3.0-dev",
   "description": "Helpers to create DOM elements",
   "module": "index.js",
   "main": "index.js",
